@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+                    http://www.springframework.org/schema/util
+                    http://www.springframework.org/schema/util/spring-util-2.5.xsd">
+
+
+    <bean id="barca" class="FootballTeam">
+        <constructor-arg value="Barcelona"/>
+        <constructor-arg value="Spain"/>
+        <constructor-arg ref="players"/>
+    </bean>
+
+    <bean id="real" class="FootballTeam">
+        <property name="name" value="Real Madrid"/>
+        <property name="country" value="Spain"/>
+        <property name="players" ref="players"/>
+    </bean>
+
+    <util:list id="players" value-type="java.lang.String">
+        <value>Messi</value>
+        <value>Dembele</value>
+        <value>Suarez</value>
+        <value>Coutinho</value>
+        <value>Pique</value>
+    </util:list>
+
+</beans>
